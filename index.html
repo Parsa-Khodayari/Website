@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Screen</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            height: 100vh;
+            color: black;
+            font-family: monospace;
+            font-size: 18px;
+        }
+
+        #loading-text {
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-text"></div>
+
+    <script>
+        const sentences = [
+            "Running build in Tehran, Iran...",
+            "Cloning github.com/shiftwalk/ijp-2023 (Branch: main, Commit: 06ab843)...",
+            "Cloning completed: 222.005ms...",
+            "Running build info - Compiled successfully...",
+            "Collecting page data...",
+            "Generating static pages (2/2)...",
+            "Uploading build cache [1.48 MB]...",
+            "Site ready..."
+        ];
+
+        let index = 0;
+        const loadingTextDiv = document.getElementById('loading-text');
+        const changeSpeeds = [120, 110, 110, 130, 100, 100, 100, 185];
+
+        function showNextSentence() {
+            if (index < sentences.length) {
+                loadingTextDiv.textContent += sentences[index] + '\n';
+                index++;
+
+                const nextSpeed = index < changeSpeeds.length ? changeSpeeds[index] : 200;
+                setTimeout(showNextSentence, nextSpeed);
+            } else {
+                setTimeout(() => {
+                    window.location.href = 'FrontPage.html';
+                }, 350);
+            }
+        }
+
+        // Mark as visited
+        localStorage.setItem('visited', 'true');
+        showNextSentence();
+    </script>
+</body>
+</html>

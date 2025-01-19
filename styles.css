@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Domaine NM'; /* You can name the font as you like */
+    src: url('font/DomaineNM.otf') format('opentype'); /* Specify the path and format */
+    font-weight: normal; /* You can change this if you have bold/italic versions */
+    font-style: normal; /* Change to 'italic' if you have an italic version */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Domaine NM', sans-serif; /* Fallback to sans-serif if the font fails to load */
+  margin: 0;
+  padding: 0;
+  font-weight: 700; /* Bold */
+  font-weight: 400; /* Regular */
+}
+
+header {
+  font-size: 21px;
+  color: black;
+  text-align: center;
+  padding: 20px;
+}
+
+.carousel-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  min-width: 100%;
+  transition: opacity 0.5s ease;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+footer {
+  font-size: 21px;
+  color: black;
+  text-align: center;
+  padding: 10px;
+}
+
+span {
+  font-size: 21px;
+}
+
+/* footer */
+
+footer {
+  font-size: 21px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-content {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+    font-weight: 400;
+}
+
+
+.left-links a,
+.right-email a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #000;
+}
+
+.black-dot {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: black;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+.white-dot {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 1.5px solid black;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+.ShowImagebody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+#slider {
+  width: 660px;
+  height: 445px;
+  overflow: hidden;
+  position: relative;
+}
+#slider img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s;
+}
+#slider img.active {
+  opacity: 1;
+}
+
+.image-carousel {
+  width: 660px;
+  height: 445px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: #f0f0f0; /* Optional background */
+}
+
+.image-carousel img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: grayscale(100%);
+  transition: filter 0.5s; /* Transition for hover effect */
+}
+
+.image-carousel img:hover {
+  filter: grayscale(0%);
+}
+
+/* Base Style for Links */
+footer .left-links a,
+footer .right-email a {
+  text-decoration: none; /* Remove default underline */
+  position: relative; /* Required for pseudo-element positioning */
+  color: black;
+}
+
+/* Underline Animation on Hover */
+footer .left-links a::after,
+footer .right-email a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Position underline just below the text */
+  width: 0; /* Start with no width */
+  height: 2px; /* Thickness of the underline */
+  background-color: black; /* Color of the underline */
+  transition: width 0.4s ease; /* Smooth animation for underline */
+}
+
+footer .left-links a:hover::after,
+footer .right-email a:hover::after {
+  width: 100%; /* Expand the underline on hover */
+}

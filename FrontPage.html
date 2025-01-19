@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Network Manager @ TabeshDentalClinic.ir | Parsa Khodayari</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Redirect to index.html if the session hasn't visited the preloader
+        window.onload = function () {
+            if (!localStorage.getItem('visited')) {
+                window.location.href = 'index.html';
+            } else {
+                // Clear the visited flag after loading
+                localStorage.removeItem('visited');
+            }
+        };
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+      <div class="left">Parsa Khodayari</div>
+        <div class="center">Freelance Designer — Art Direction, Brand, Interactive</div>
+        <div class="right">
+            <a href="#linkA" style="margin-right: 6px;">
+                <span class="black-dot"></span>Reel
+            </a>
+            <a href="/info.html">
+                <span class="white-dot"></span>Info
+            </a>
+        </div>
+    </header>
+
+    <style>
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 50px;
+            padding: 0 20px;
+            background-color: #fff; /* Optional: Adjust as needed */
+            font-size: 21px;
+            color: black;
+            font-family: 'Domaine NM', sans-serif;
+        }
+
+
+        .center {
+            flex-grow: 1;
+            text-align: center;
+            font-weight: 400;
+        }
+
+        .right {
+            display: flex;
+            gap: 10px;
+        }
+
+        .right a {
+            text-decoration: none;
+            color: black;
+            display: flex;
+            align-items: center;
+        }
+
+        .black-dot, .white-dot {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            margin-right: 4px;
+        }
+
+        .black-dot {
+            background-color: black;
+        }
+
+        .white-dot {
+            border: 1.5px solid black;
+        }
+    </style>
+
+
+    <!-- Image Carousel -->
+    <div class="ShowImagebody">
+        <div class="image-carousel">
+            <img src="image1.jpg" alt="Image 1">
+            <img src="image2.jpg" alt="Image 2" style="display: none;">
+            <img src="image3.jpg" alt="Image 3" style="display: none;">
+            <!-- Add more images as needed -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="left-links">
+                <a href="#link1" style="margin-right: 0px;">Instagram,</a>
+                <a href="#link2" style="margin-left: 0px;"> LinkedIn</a>
+            </div>
+            <div class="clock" id="clock"></div>
+            <div class="right-email">
+                <a href="mailto:example@example.com">Send Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
